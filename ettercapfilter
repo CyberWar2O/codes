@@ -1,12 +1,14 @@
-#NOTE The IP Address will need to be updated for the plc
+#NOTE The IP Address will need to be updated for the Modbuspal
 
-If (ip.dst == ‘192.168.139.131’ && tcp.dst == 10502) {
+if (ip.dst == '172.16.70.130' && tcp.dst == 10502) {
 
-If (DATA.dst + 7 == “”\x05” || DATA.dst + 7 == “”\x06 || DATA.dst + 7 == “”\x15” ||.DATA.dst + 7 == “”\x16 ) {
+if (DATA.data + 7 == "\x05" || DATA.data + 7 == "\x06" || DATA.data + 7 == "\x15" || DATA.data + 7 == "\x16" )
+{
+        drop();
 
-drop();
-
-msg(“”Dropped Modbus Message)
+        msg("Dropped Modbus Message");
 
 }
-}
+
+ }
+
