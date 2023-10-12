@@ -1,0 +1,12 @@
+#NOTE The IP Address will need to be updated for the plc
+
+If (ip.dst == ‘192.168.139.131’ && tcp.dst == 10502) {
+
+If (DATA.dst + 7 == “”\x05” || DATA.dst + 7 == “”\x06 || DATA.dst + 7 == “”\x15” ||.DATA.dst + 7 == “”\x16 ) {
+
+drop();
+
+msg(“”Dropped Modbus Message)
+
+}
+}
