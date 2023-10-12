@@ -4,3 +4,10 @@ Read coil
 Read register
 
  Mbtget -u 1 -p 10502 -r3 -a 0 -n 2 192.168.139.131
+
+Wrtting in multiple register
+mbtget -u 1 -p 10502 -w6 220  -a 3 172.16.70.130
+
+Writing in coil 
+
+mbtget -u 1 -p 10502 -w5 0  -a 0 172.16.70.130
